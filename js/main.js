@@ -32,23 +32,23 @@ function ingresarEdad(){
 }
 
 function presupuesto1(){
-    subtotal1 = confirm("El total de tu compra por $"+ total1  + "\n Desea adquirir adquirir algo mas?"); 
+    subtotal1 = confirm("El total de tu compra por $"+ total1  + "\n ¿Desea adquirir adquirir algo mas?"); 
 }
 
 function presupuesto2(){
-subtotal2 = confirm("Tu compra es de $" +total1 + "+ $" + total2 +" = $" + (total1 + total2)  +"\n Desea adquirir adquirir algo mas?"); 
+subtotal2 = confirm("Tu compra es de $" +total1 + "+ $" + total2 +" = $" + (total1 + total2)  +"\n ¿Desea adquirir adquirir algo mas?"); 
   }
 
 function presupuesto3(){
-subtotal3= confirm("Tu compra es de $" + total1 + "+$"+ total2 + "+$"+ total3+ "= $" + (total1 + total2 + total3)+ "\n Desea adquirir adquirir algo mas?");
+subtotal3= confirm("Tu compra es de $" + total1 + "+$"+ total2 + "+$"+ total3+ "= $" + (total1 + total2 + total3)+ "\n ¿Desea adquirir adquirir algo mas?");
 }
  
 function presupuesto4(){
-subtotal4= confirm("Tu compra es de $" + total1 + "+$"+ total2 + "+$"+ total3+ "+$"+ total4 + "= $" + (total1 + total2 + total3 + total4)+ "\n Desea adquirir adquirir algo mas?");
+subtotal4= confirm("Tu compra es de $" + total1 + "+$"+ total2 + "+$"+ total3+ "+$"+ total4 + "= $" + (total1 + total2 + total3 + total4)+ "\n ¿Desea adquirir adquirir algo mas?");
 }
 
 function presupuesto5(){
-subtotal5= confirm("Tu compra es de $" + total1 + "+$"+ total2 +"+$"+ total3+ "+$"+ total4 + "+$" + total5 + "= $" + (total1 + total2 + total3 + total4 + total5)+ "\n Desea adquirir adquirir algo mas?");
+subtotal5= confirm("Tu compra es de $" + total1 + "+$"+ total2 +"+$"+ total3+ "+$"+ total4 + "+$" + total5 + "= $" + (total1 + total2 + total3 + total4 + total5)+ "\n ¿Desea adquirir adquirir algo mas?");
 }
 
 function presupuestoFinal(){
@@ -56,7 +56,7 @@ alert("Muchas gracias " + nombre +" por su compra! el total abonar es de $" + (t
 }
 
 function pregunta(){
-uva = prompt("Bienvenido/a, " + nombre + "! Que tipo de vino te gustaría adquirir?  \n1. Trumpeter Malbec  \n2. Rutini  Cabernet Sauvignon \n3. San Felipe Chardonnay \n4. Escorihuela Sauvignon Blanc \n5. Trapiche Reserva Malbec \n6. Finca la Linda Syrah \n7. Don David Merlot")
+uva = prompt("Bienvenido/a, " + nombre + "! ¿Que tipo de vino le gustaría adquirir?  \n1. Trumpeter Malbec  \n2. Rutini  Cabernet Sauvignon \n3. San Felipe Chardonnay \n4. Escorihuela Sauvignon Blanc \n5. Trapiche Reserva Malbec \n6. Finca la Linda Syrah \n7. Don David Merlot")
     switch(uva){
         case "1":
          vino = trumpeter;
@@ -87,7 +87,7 @@ uva = prompt("Bienvenido/a, " + nombre + "! Que tipo de vino te gustaría adquir
 }
 
 function rePregunta(){
-    uva = prompt("¿ Que otro vino te gustaría obtener?  \n1. Trumpeter Malbec  \n2. Rutini  Cabernet Sauvignon \n3. San Felipe Chardonnay \n4. Escorihuela Sauvignon Blanc \n5. Trapiche Reserva Malbec \n6. Finca la Linda Syrah \n7. Don David Merlot")
+    uva = prompt("¿ Que otro vino le gustaría obtener?  \n1. Trumpeter Malbec  \n2. Rutini  Cabernet Sauvignon \n3. San Felipe Chardonnay \n4. Escorihuela Sauvignon Blanc \n5. Trapiche Reserva Malbec \n6. Finca la Linda Syrah \n7. Don David Merlot")
     switch(uva){
         case "1":
          vino = trumpeter;
