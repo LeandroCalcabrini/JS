@@ -53,15 +53,14 @@ let variedad = prompt("Tenemos para ofrecer una amplia gama de vinos. Por favor 
             varietal = prompt("Ingrese Varietal. \n- Malbec \n- Cabernet Sauvignon \n- Syrah \n- Tempranillo");
             break;
             case "Blanco":
-                varietal = prompt("Ingrese Varietal \n- Chardonnay \n- Sauvignon Blanc");
+                varietal = prompt("Ingrese Varietal \n- Chardonnay \n- Sauvignon Blanc \n- Torrontés");
                 break;
                 case "Rosado":
-                    varietal = prompt("Ingrese Varietal \n- Malbec \n- Pinot")
+                    varietal = prompt("Ingrese Varietal \n- Malbec \n- Pinot Noir")
                 break;
                 default:
                     alert("Variedad ingresada incorrecta.")
 }
-
 
 let minimo = Number(prompt("Ingrese el mínimo a gastar"));
 let maximo = Number(prompt("Ingrese el máximo que puede gastar"));
