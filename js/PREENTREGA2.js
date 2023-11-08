@@ -1,7 +1,7 @@
 
 
 function mostrarVinos(vinos){
-    vinos.forEach( vino => alert(vino.variedad + " - " + vino.varietal + " - " + vino.bodega + " - precio:$" + vino.precio) );
+    vinos.forEach( vino => alert("- Vino: " + vino.nombre + "\n- Tipo: " + vino.variedad + " - " + vino.varietal + " \n- Bodega: "+ vino.bodega + " \n- Precio: $" + vino.precio) );
 }
 
 function filtrarVinos(){
