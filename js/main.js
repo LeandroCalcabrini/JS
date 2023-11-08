@@ -133,11 +133,6 @@ function obtenerCantidad(){
 
 
 
-
-
-
-
-
 ingresarNombre()
 
 while((nombre >=0) || (nombre<0)){
