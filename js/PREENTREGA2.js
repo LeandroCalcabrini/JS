@@ -66,4 +66,8 @@ let minimo = Number(prompt("Ingrese el mínimo a gastar"));
 let maximo = Number(prompt("Ingrese el máximo que puede gastar"));
 alert("DADA A LA VARIEDAD '" + variedad + "', AL VARIETAL '" + varietal + "' Y AL RANGO DE PRECIO INGRESADO,(" + minimo + " - "+ maximo + ") PODEMOS OFRECERLE LOS SIGUIENTES VINOS:")
 
+
+
+
+
 filtrarVinos ();

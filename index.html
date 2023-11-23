@@ -5,463 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/db.js" defer> </script>
-    <script src="./js/PREENTREGA2.js" defer ></script>
-    <title>Document</title>
+    <script src="./js/data.js" defer> </script>
+    <script src="./js/app.js" defer> </script>
+    <script src="./js/cartService.js" defer> </script>
+  <!--  <script src="./js/LEANDRO1.js" defer> </script> -->
+    <title></title>
 </head>
 <body>
+  
     <header>
         <nav>
-
+           <a href="index.html"><img src="./img/logo1.jpg" class="header-img"alt="logo"></a> 
+            <div>
+                <a href="#">BTM</a>
+                <a href="#">Ruta</a>
+                <a href="cart.html"><img src="./img/shoppping cart.jpg" alt="carrito de compras"><span id="cuenta-carrito">0</span></i>
+                    </a>
+            </div>
         </nav>
     </header>
-    <main>
-        <aside>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi molestiae mollitia minima omnis earum saepe eveniet, quas pariatur quam quis.</p>
-        </aside>
-        <section class="banner">
-            <h1 class="text-center">Vinoteca "EL VINO TE COPA"</h1>
-        </section>
-        <section class="container">
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Trapiche Perfiles Malbec</h2>
-                    <img src="./img/MALBEC/TRAPICHE PERFILES MALBEC.png" class="rounded mx-auto d-block" alt="TRAPICHE PERFILES MALBEC">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$6950</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Fond de Cave Reserva Malbec</h2>
-                     <img src="./img/MALBEC/FOND DE CAVE RESERVA MALBEC-283x348.png" class="rounded mx-auto d-block" alt="FOND DE CAVE RESERVA MALBEC" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$5100</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Biri Biri Malbec</h2>
-                     <img src="./img/MALBEC/BIRIBIRI_MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$1500</p>
-                     </div>   
-                 </article>
-            </div>          
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Cayado Malbec</h2>
-                    <img src="./img/MALBEC/CAYADO MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$1950</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Fulanito Malbec</h2>
-                     <img src="./img/MALBEC/FULANITO_MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$2000</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Las perdices Malbec</h2>
-                     <img src="./img/MALBEC/LAS PERDICES MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3000</p>
-                     </div>   
-                 </article>
-            </div> 
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Portillo Malbec</h2>
-                    <img src="./img/MALBEC/PORTILLO MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$2500</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Preludio Malbec</h2>
-                     <img src="./img/MALBEC/PRELUDIO_MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$2500</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Reto Malbec</h2>
-                     <img src="./img/MALBEC/RETO MALBEC.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$2590</p>
-                     </div>   
-                 </article>
-            </div>
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Tradición Malbec</h2>
-                    <img src="./img/MALBEC/TRADICION_malbec.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$2450</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Abito Cabernet Sauvignon</h2>
-                     <img src="./img/CABERNET/ABITO_CSAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$6950</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Aguijon de abeja Cabernet Sauvignon</h2>
-                     <img src="./img/CABERNET/AGUIJON DE ABEJA CSAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$4000</p>
-                     </div>   
-                 </article>
-            </div>                      
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Alchimia Cabernet Sauvignon</h2>
-                    <img src="./img/CABERNET/ALCHIMIA CSAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3400</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Altus Cabernet Sauvignon</h2>
-                     <img src="./img/CABERNET/ALTOS CSAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$2400</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Amauta Cabernet Sauvignon</h2>
-                     <img src="./img/CABERNET/AMAUTA CSAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$4200</p>
-                     </div>   
-                 </article>
-            </div>      
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Cielo Vida Suelo Cabernet Sauvignon</h2>
-                    <img src="./img/CABERNET/CIELO VIDA SUELO CSAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$2500</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Domaine Bousquet Cabernet Sauvignon</h2>
-                     <img src="./img/CABERNET/DOMAINE BOUSQUET CABERNET SAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$2500</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Las Perdices Reserva Cabernet Sauvignon</h2>
-                     <img src="./img/CABERNET/LAS PERDICES RESERVA CABERNET SAUVIGNON.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$4600</p>
-                     </div>   
-                 </article>
-            </div>
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Hinojosa Don Silvestre Tempranillo</h2>
-                    <img src="./img/TEMPRANILLO/HINOJOSA  DON SILVESTRE TEMPRANILLO-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3000</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Hinojosa Roble Tempranillo </h2>
-                     <img src="./img/TEMPRANILLO/HINOJOSA ROBLE TEMPRANILLO-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$3600</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Zucardi Q Tempranillo</h2>
-                     <img src="./img/TEMPRANILLO/ZUCCARDI Q TEMPRANILLO-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$9400</p>
-                     </div>   
-                 </article>
-            </div>     
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Domiciano Reserva Syrah</h2>
-                    <img src="./img/SYRAH/DOMICIANO COSECHA RESERVA SYRAH-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$7500</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>La Puerta Syrah</h2>
-                     <img src="./img/SYRAH/LA PUERTA CLASICO SYRAH-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$2150</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Monteagrelo Syrah</h2>
-                     <img src="./img/SYRAH/MONTEAGRELO_SY-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3850</p>
-                     </div>   
-                 </article>
-            </div>    
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Lorca Opalo Syrah</h2>
-                    <img src="./img/SYRAH/LORCA OPALO SYRAH.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$6600</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Saint Felicien Syrah</h2>
-                     <img src="./img/SYRAH/SAINT FELICIEN SYRAH-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$5800</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Altus Chardonnay</h2>
-                     <img src="./img/CHARDONNAY/ALTUS CHARDONNAY-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3900</p>
-                     </div>   
-                 </article>
-            </div>           
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Altus Gran Reserva Chardonnay</h2>
-                    <img src="./img/CHARDONNAY/ALTUS GRAN RESERVA CHARDONNAY-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$5700</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Angelica Zapata Chardonnay</h2>
-                     <img src="./img/CHARDONNAY/AngelicaZapata-Chardonnay.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$13000</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Atamisque Chardonnay</h2>
-                     <img src="./img/CHARDONNAY/ATAMISQUE CHARDONNAY-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$14500</p>
-                     </div>   
-                 </article>
-            </div>   
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>DV Catena Chardonnay</h2>
-                    <img src="./img/CHARDONNAy/DV CATENA CHARDONNAY CHARDONNAY-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$8400</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Las Perdices Reserva Chardonnay</h2>
-                     <img src="./img/CHARDONNAY/LAS PERDICES RESERVA CHARDONNAY-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$4600</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Domaine Bousquet Sauvignon Blanc</h2>
-                     <img src="./img/SAUVIGNON BLANC/DOMAINE BOUSQUET SAUVIGNON BLANC-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$2500</p>
-                     </div>   
-                 </article>
-            </div>        
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Finca La Anita Sauvignon Blanc</h2>
-                    <img src="./img/SAUVIGNON BLANC/FINCA LA ANITA SAUVIGNON BLANC-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$5100</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Las Perdices Exploración Sauvignon Blanc</h2>
-                     <img src="./img/SAUVIGNON BLANC/LAS PERDICES EXPLORACION SAUVIGNON BLANC CASA BLANCA-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$6400</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Las Perdices Sauvignon Blanc</h2>
-                     <img src="./img/SAUVIGNON BLANC/LAS PERDICES SAUV BLANC-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3000</p>
-                     </div>   
-                 </article>
-            </div>
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Luigi Bosca Sauvignon Blanc</h2>
-                    <img src="./img/SAUVIGNON BLANC/luigi_bosca_sauvignon_blanc-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$4600</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Lorca Fantasía Sauvignon Blanc</h2>
-                     <img src="./img/SAUVIGNON BLANC/ML-Fantasia-Sauvignon-Blanc-330x495-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$2500</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Rutini Sauvignon Blanc</h2>
-                     <img src="./img/SAUVIGNON BLANC/RUTINI COLECCION SAUVIGNON BLANC-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$9700</p>
-                     </div>   
-                 </article>
-            </div>         
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Acurro Torrontés</h2>
-                    <img src="./img/TORRONTES/Accuro-TORRO-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3600</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Amauta Absoluto Torrontés</h2>
-                     <img src="./img/TORRONTES/AMAUTA ABSOLUTO TORRONTES-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$4200</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Laborum Single Vineyard Torrontés</h2>
-                     <img src="./img/TORRONTES/LABORUM SINGLE VINEYARD TORRONTES-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$4600</p>
-                     </div>   
-                 </article>
-            </div>  
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Solo Contigo Torrontés</h2>
-                    <img src="./img/TORRONTES/SOLOCONTIGO PRIMERA AMANTE TORRONTES-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3600</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Tapiz Torrontés</h2>
-                     <img src="./img/TORRONTES/TAPIZ CLASICO TORRONTES copy-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$3400</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Rutini Rosé Malbec</h2>
-                     <img src="./img/ROSADO MALBEC/RUTINI ROSE-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$20000</p>
-                     </div>   
-                 </article>
-            </div>     
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Salentein Reserva Rosé de Malbec</h2>
-                    <img src="./img/ROSADO MALBEC/SALENTEIN RESERVA ROSE-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$3600</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Tapiz Rosé de Malbec</h2>
-                     <img src="./img/ROSADO MALBEC/TAPIZ ALTA COLECCION ROSE-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$5200</p>
-                     </div>   
-                 </article>
-                 <article class="col mt-5">
-                     <h2 class>Trumpeter Reserva Rosé de Malbec</h2>
-                     <img src="./img/ROSADO MALBEC/trumpeter-reserve-rose-de-malbec-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$6700</p>
-                     </div>   
-                 </article>
-            </div>   
-            <div class="row">
-                <article class="col mt-5">
-                    <h2>Humberto Canalle Rosé Pinot Noir</h2>
-                    <img src="./img/ROSADO PINOT/Old-Vineyard-Rose-v-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO">
-                    <div class="contenedor">
-                         <button>Agregar</button>
-                         <p>$5400</p>
-                    </div>       
-                 </article>
-                <article class="col mt-5">
-                      <h2>Sylvestra Rose Pinot Noir</h2>
-                     <img src="./img/ROSADO PINOT/SYLVESTRA ROSE PINOT NOIR-283x348.png" class="rounded mx-auto d-block" alt="VINO TINTO MALBEC ABITO" >
-                     <div class="contenedor">
-                         <button>Agregar</button>
-                          <p>$3600</p>
-                     </div>   
-                 </article>
-            </div>                                                     
-        </section>
-    </main>
-    <footer>
+    <aside>
+        <H2>Categorias</H2>
+    <ul>
+        <li><button id="Tinto" class="boton-variedad">Vino Tinto</button></a></li>
+        <ul class="sublista">
+            <li><button id="Malbec" class="boton-varietal">Malbec</button></a></li>
+            <li><button id="Cabernet Sauvignon" class="boton-varietal">Cabernet Sauvignon</button></a></li>
+            <li><button id="Merlot" class="boton-varietal">Merlot</button></a></li>
+        </ul>
+        <li><button id="Blanco" class="boton-variedad">Vino Blanco</button></a></li>
+        <ul class="sublista">
+            <li><button id="Chardonnay" class="boton-varietal">Chardonnay</button></a></li>
+            <li><button id="Sauvignon Blanc" class="boton-varietal">Sauvignon Blanc</button></a></li>
+        </ul>
+        <li><button id="Rosado" class="boton-variedad">Vino Rosado</button></a></li>
+        <ul class="sublista">
+            <li><button id="Rosé de Malbec" class="boton-varietal">Rosé de Malbec</button></a></li>
+            <li><button id="Dulce" class="boton-varietal">Dulce</button></a></li>
+        </ul>
+    </ul>
+    <h2>Bodegas</h2>
+    <ul>
+        <li><button id="Salentein Wines" class="boton-bodega">Bodega Salentein Wines</button></a></li>
+        <li><button id="Nieto Senetiner" class="boton-bodega">Bodega Nieto Senetinner</button></a></li>
+    </ul>
+    </aside>
+<main>
 
-    </footer>
+<section class="container">
+    <div id="shopContent" class="shop-content row">
+</section>
+
+
+</div>
+</main>
+
+<footer>
+<p> Desarrollado por Leandro Calcabrini</p>
+</footer>
+
 
 </body>
 </html>
