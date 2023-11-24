@@ -24,9 +24,15 @@
             </div>
         </nav>
     </header>
-    <aside>
+    <aside class="m-2">
         <H2>Categorias</H2>
     <ul>
+        <li>
+        <button id="todos" class="boton-todos">Todos los productos</button></a>
+        </li>
+        <ul>
+
+        </ul>
         <li><button id="Tinto" class="boton-variedad">Vino Tinto</button></a></li>
         <ul class="sublista">
             <li><button id="Malbec" class="boton-varietal">Malbec</button></a></li>
@@ -49,10 +55,28 @@
         <li><button id="Salentein Wines" class="boton-bodega">Bodega Salentein Wines</button></a></li>
         <li><button id="Nieto Senetiner" class="boton-bodega">Bodega Nieto Senetinner</button></a></li>
     </ul>
+    <h2>Filtrar por</h2>
+    <h3>Precio</h3>
+    <div class="contenedor-filtro-precio">
+        <input class="contenedor-precio" id="precio-minimo" type="text"> -
+        <input class="contenedor-precio" id="precio-maximo" type="text">
+        <button class="" id="buscar-rango">BUSCAR</button>
+        <div class="contenedor-rango"> 
+            <div>
+                <p>MIN</p>
+            </div>
+            <div>
+                <p>MAX</p>
+            </div>
+        </div>
+    </div>
+    
+
     </aside>
 <main>
 
 <section class="container">
+ <h1 id="titulo-principal">titulo</h1>
     <div id="shopContent" class="shop-content row">
 </section>
 

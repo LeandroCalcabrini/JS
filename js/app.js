@@ -1,19 +1,19 @@
 let carrito = [];
 
 const shopContent = document.getElementById("shopContent");
-const botonMalbec = document.getElementById("Malbec");
+/* const botonMalbec = document.getElementById("Malbec");
 const botonCabernet = document.getElementById("Cabernet Sauvignon");
-const botonMerlot = document.getElementById("Merlot");
+const botonMerlot = document.getElementById("Merlot"); */
 
-const varietalMalbec = botonMalbec.id;
-const varietalCabernet = botonCabernet.id;
-
-
-
-
+const botonTodos = document.getElementById("todos")
 const botonVarietal = document.querySelectorAll(".boton-varietal");
 const botonBodega = document.querySelectorAll(".boton-bodega");
-const botonVariedad = document.querySelectorAll(".boton-variedad")
+const botonVariedad = document.querySelectorAll(".boton-variedad");
+const botonRangoPrecio = document.getElementById(".buscar-rango");
+const titulo = document.querySelector("#titulo-principal");
+
+const minimo = document.getElementById(".precio-minimo");
+const maximo = document.getElementById(".precio-maximo"); 
 
 
 function cargarProductos(productosElegidos){
@@ -37,26 +37,56 @@ function cargarProductos(productosElegidos){
 cargarProductos(productos);
 
 
-botonVarietal.forEach(boton => {
-    boton.addEventListener("click",(e)=>{
-        const varietalesElegidos = productos.filter(producto => producto.varietal === e.currentTarget.id)
-        cargarProductos(varietalesElegidos);
+
+function filtrar(){
+
+        botonVarietal.forEach(boton => {
+            boton.addEventListener("click",(e)=>{
+                
+                const varietalesElegidos = productos.filter(producto => producto.varietal === e.currentTarget.id);
+                cargarProductos(varietalesElegidos);
+                titulo.innerText = e.currentTarget.id;
+            })
+        })
+        
+        
+        botonBodega.forEach(boton =>{
+            boton.addEventListener("click",(e)=>{
+                const bodegaElegida = productos.filter(producto => producto.bodega === e.currentTarget.id);
+                cargarProductos(bodegaElegida);
+                titulo.innerText = e.currentTarget.id;
+            })
+
+        })
+        
+
+        botonVariedad.forEach(boton =>{
+            boton.addEventListener("click",(e) =>{
+                const variedadElegida = productos.filter(producto => producto.variedad === e.currentTarget.id);
+                cargarProductos(variedadElegida)
+                titulo.innerText = e.currentTarget.id;
+            })
+        }) 
+        
+        botonTodos.addEventListener("click",()=>{
+            cargarProductos(productos)
+            titulo.innerText = "Todos los productos";
+
+        })
+    }
+    
+
+filtrar()
+
+
+
+/*  AGREGAR FUNCIONALIDAD A EL FILTRO DE PRECIO */
+
+/* botonVariedad.forEach(boton=>{
+    boton.addEventListener("click",()=>{
+        const rangoPrecio = producto.filter(producto => producto.precio >= minimo && producto.precio<=maximo)
+        cargarProductos(rangoPrecio)
     })
 })
-
-
-
-botonBodega.forEach(boton =>{
-    boton.addEventListener("click",(e)=>{
-        const bodegaElegida = productos.filter(producto => producto.bodega === e.currentTarget.id)
-        cargarProductos(bodegaElegida);
-
-    })
-})
-
-botonVariedad.forEach(boton =>{
-    boton.addEventListener("click",(e) =>{
-        const variedadElegida = productos.filter(producto => producto.variedad === e.currentTarget.id)
-        cargarProductos(variedadElegida)
-    })
-})
+  
+ */
