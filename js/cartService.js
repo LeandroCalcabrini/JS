@@ -1,4 +1,4 @@
-function agregarAlCarrito(nuevoProducto){
+/* function agregarAlCarrito(nuevoProducto){
     const memoria = localStorage.getItem("vinos");
     console.log(memoria);
     if(!memoria){
@@ -10,7 +10,7 @@ function agregarAlCarrito(nuevoProducto){
         localStorage.setItem("vinos",JSON.stringify(nuevaMemoria));
 
     }
-}
+} */
 
 
 

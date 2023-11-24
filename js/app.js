@@ -1,5 +1,4 @@
-let carrito = [];
-
+const carrito = [];
 const shopContent = document.getElementById("shopContent");
 /* const botonMalbec = document.getElementById("Malbec");
 const botonCabernet = document.getElementById("Cabernet Sauvignon");
@@ -11,6 +10,8 @@ const botonBodega = document.querySelectorAll(".boton-bodega");
 const botonVariedad = document.querySelectorAll(".boton-variedad");
 const botonRangoPrecio = document.getElementById(".buscar-rango");
 const titulo = document.querySelector("#titulo-principal");
+
+
 
 const minimo = document.getElementById(".precio-minimo");
 const maximo = document.getElementById(".precio-maximo"); 
@@ -26,12 +27,18 @@ function cargarProductos(productosElegidos){
         <h3>${producto.nombre + " " +producto.varietal}</h3>
         <img src ="${producto.imagen}">
         <p class="precio">$ ${producto.precio} </p>
-        <button>Agregar al Carrito</button>
+        <button class="boton-agregar" id="${producto.id}">Agregar al Carrito</button>
         `;
     
         shopContent.append(contenido);
-        contenido.getElementsByTagName("button")[0].addEventListener("click",()=> agregarAlCarrito(producto))      
+
+/*         contenido.getElementsByTagName("button")[0].addEventListener("click",()=> agregarAlCarrito(producto))       */
     })
+let botonAgregarCarrito = document.querySelectorAll(".boton-agregar");
+
+botonAgregarCarrito.forEach(boton =>{
+    boton.addEventListener("click",agregarAlCarrito)
+})
 }
 
 cargarProductos(productos);
@@ -80,13 +87,17 @@ filtrar()
 
 
 
-/*  AGREGAR FUNCIONALIDAD A EL FILTRO DE PRECIO */
 
-/* botonVariedad.forEach(boton=>{
-    boton.addEventListener("click",()=>{
-        const rangoPrecio = producto.filter(producto => producto.precio >= minimo && producto.precio<=maximo)
-        cargarProductos(rangoPrecio)
-    })
-})
+
+function agregarAlCarrito(e){
+    const idBotonAgregar = e.currentTarget.id;
+    console.log(idBotonAgregar)
   
- */
+    const productoAgregado = productos.find(producto => producto.id === idBotonAgregar);
+    console.log(productoAgregado)
+  
+}
+
+
+
+
