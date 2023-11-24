@@ -13,6 +13,7 @@ const titulo = document.querySelector("#titulo-principal");
 
 
 
+
 const minimo = document.getElementById(".precio-minimo");
 const maximo = document.getElementById(".precio-maximo"); 
 
@@ -34,11 +35,11 @@ function cargarProductos(productosElegidos){
 
 /*         contenido.getElementsByTagName("button")[0].addEventListener("click",()=> agregarAlCarrito(producto))       */
     })
-let botonAgregarCarrito = document.querySelectorAll(".boton-agregar");
+    let botonAgregarCarrito = document.querySelectorAll(".boton-agregar");
+    botonAgregarCarrito.forEach(boton =>{
+        boton.addEventListener("click",agregarAlCarrito)
+    })
 
-botonAgregarCarrito.forEach(boton =>{
-    boton.addEventListener("click",agregarAlCarrito)
-})
 }
 
 cargarProductos(productos);
@@ -89,15 +90,17 @@ filtrar()
 
 
 
+
+
+
+
+
+
+
 function agregarAlCarrito(e){
     const idBotonAgregar = e.currentTarget.id;
-    console.log(idBotonAgregar)
   
     const productoAgregado = productos.find(producto => producto.id === idBotonAgregar);
     console.log(productoAgregado)
   
 }
-
-
-
-
