@@ -2,7 +2,7 @@ const productos =[
     /* TINTOS */
     /* -----------------------MALBEC -----------------------*/
     {
-        id: 1,
+        id: "1",
         nombre: 'Killka',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -11,7 +11,7 @@ const productos =[
         imagen: "./img/MALBEC/Killka_Malbec.png",
     },
     {
-        id: 2,
+        id: "2",
         nombre: 'Benjamin',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -20,7 +20,7 @@ const productos =[
         imagen:"./img/MALBEC/Benjamin_Malbec_2022.png",
     },
     {
-        id: 3,
+        id: "3",
         nombre: 'Portillo',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -29,7 +29,7 @@ const productos =[
         imagen:"./img/MALBEC/Portillo_Mlabec.png",
     },
     {
-        id: 4,
+        id: "4",
         nombre: 'Don Nicanor',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -38,7 +38,7 @@ const productos =[
         imagen:"./img/MALBEC/don nicanor malbec.png",
     },
     {
-        id: 5,
+        id: "5",
         nombre: 'Fran',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -47,7 +47,7 @@ const productos =[
         imagen:"./img/MALBEC/Fran_Malbec_2022.png",
     },
     {
-        id: 6,
+        id: "6",
         nombre: 'Salentein Reserva',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -56,7 +56,7 @@ const productos =[
         imagen:"./img/MALBEC/SALENTEIN Reserva_Malbec.png",
     },
     {
-        id: 7,
+        id: "7",
         nombre: 'Emilia',
         variedad: 'Tinto',
         varietal: 'Malbec', 
@@ -67,7 +67,7 @@ const productos =[
 
         /* -----------------------CABERNET -----------------------*/
     {
-        id: 10,
+        id: "10",
         nombre: 'Killka',
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
@@ -76,7 +76,7 @@ const productos =[
         imagen:"./img/CABERNET/killka cs.png",
     },  
     {
-        id: 11,
+        id: "11",
         nombre: 'Portillo',
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
@@ -85,7 +85,7 @@ const productos =[
         imagen:"./img/CABERNET/portillo cs.png",
     },
     {
-        id: 12,
+        id: "12",
         nombre: 'Benjamin',
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
@@ -103,7 +103,7 @@ const productos =[
         imagen:"./img/CABERNET/don nicanor cs.png",
     },
     {
-        id: 14,
+        id: "14",
         nombre: 'Salentein Reserva',
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
@@ -112,7 +112,7 @@ const productos =[
         imagen:"./img/CABERNET/salentein reservs cs.png",
     },
     {
-        id: 15,
+        id: "15",
         nombre: 'Emilia',
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
@@ -123,7 +123,7 @@ const productos =[
 
         /* -----------------------MERLOT -----------------------*/
     {
-        id: 17,
+        id: "17",
         nombre: 'Salentein Reserva',
         variedad: 'Tinto',
         varietal: 'Merlot', 
@@ -132,7 +132,7 @@ const productos =[
         imagen:"./img/MERLOT/salenteint merlot.png",
     },
     {
-        id: 18,
+        id: "18",
         nombre: 'Portillo',
         variedad: 'Tinto',
         varietal: 'Merlot', 
@@ -141,7 +141,7 @@ const productos =[
         imagen:"./img/MERLOT/Portillo_merlot.png",
     },
     {
-        id: 21,
+        id: "21",
         nombre: 'Benjamin',
         variedad: 'Tinto',
         varietal: 'Merlot', 
@@ -154,7 +154,7 @@ const productos =[
 
         /* -----------------------CHARDONNAY -----------------------*/
     {
-        id: 22,
+        id: "22",
         nombre: 'Benjamin',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -163,7 +163,7 @@ const productos =[
         imagen:"./img/CHARDONNAY/benjamin chardonnay.png",
     },
     {
-        id: 23,
+        id: "23",
         nombre: 'Don Nicanor',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -172,7 +172,7 @@ const productos =[
         imagen:"./img/CHARDONNAY/don nicanor chardonnay.png",
     },
     {
-        id: 24,
+        id: "24",
         nombre: 'Emilia',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -181,7 +181,7 @@ const productos =[
         imagen:"./img/CHARDONNAY/emilia chardonnay.png",
     },
     {
-        id: 26,
+        id: "26",
         nombre: 'Fran',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -190,7 +190,7 @@ const productos =[
         imagen:"./img/CHARDONNAY/fran chardonnay.png",
     },
     {
-        id: 27,
+        id: "27",
         nombre: 'Portillo',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -199,7 +199,7 @@ const productos =[
         imagen:"./img/CHARDONNAY/portilla chardonnay.png",
     },
     {
-        id: 28,
+        id: "28",
         nombre: 'Killka',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -208,7 +208,7 @@ const productos =[
         imagen:"./img/CHARDONNAY/killka chardonnay.png",
     },
     {
-        id: 29,
+        id: "29",
         nombre: 'Salentein Reserva',
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
@@ -219,7 +219,7 @@ const productos =[
 
         /* -----------------------SAUVIGNON BLANC -----------------------*/
     {
-        id: 32,
+        id: "32",
         nombre: 'Benjamin',
         variedad: 'Blanco',
         varietal: 'Sauvignon Blanc', 
@@ -228,7 +228,7 @@ const productos =[
         imagen:"./img/SAUVIGNON BLANC/benjamin sb.png",
     },
     {
-        id: 33,
+        id: "33",
         nombre: 'Emilia',
         variedad: 'Blanco',
         varietal: 'Sauvignon Blanc', 
@@ -237,7 +237,7 @@ const productos =[
         imagen:"./img/SAUVIGNON BLANC/emilia sb.png",
     },
     {
-        id: 34,
+        id: "34",
         nombre: 'Killka',
         variedad: 'Blanco',
         varietal: 'Sauvignon Blanc', 
@@ -246,7 +246,7 @@ const productos =[
         imagen:"./img/SAUVIGNON BLANC/killka sb.png",
     },
     {
-        id: 35,
+        id: "35",
         nombre: 'Portillo',
         variedad: 'Blanco',
         varietal: 'Sauvignon Blanc', 
@@ -255,7 +255,7 @@ const productos =[
         imagen:"./img/SAUVIGNON BLANC/portillo sb.png",
     },
     {
-        id: 37,
+        id: "37",
         nombre: 'Salentein Reserva',
         variedad: 'Blanco',
         varietal: 'Sauvignon Blanc', 
@@ -266,25 +266,25 @@ const productos =[
 
         /* -----------------------ROSE -----------------------*/
     {
-        id: 39,
+        id: "39",
         nombre: 'Benjamin',
         variedad: 'Rosado',
-        varietal: 'Rosé Dulce', 
+        varietal: 'Dulce', 
         bodega: 'Nieto Senetiner',
         precio: 2170,
         imagen:"./img/ROSE/benjamin rose.png",
     },
     {
-        id: 40,
+        id: "40",
         nombre: 'Emilia',
         variedad: 'Rosado',
-        varietal: 'Rosé Dulce', 
+        varietal: 'Dulce', 
         bodega: 'Nieto Senetiner',
         precio: 5000,
         imagen:"./img/ROSE/emilia rose.png",
     },
     {
-        id: 41,
+        id: "41",
         nombre: 'Portillo',
         variedad: 'Rosado',
         varietal: 'Rosé de Malbec', 
@@ -293,7 +293,7 @@ const productos =[
         imagen:"./img/ROSE/portillo rose.png",
     },
     {
-        id: 43,
+        id: "43",
         nombre: 'Salentein Reserva',
         variedad: 'Rosado',
         varietal: 'Rosé de Malbec', 

@@ -8,23 +8,25 @@
     <script src="./js/data.js" defer> </script>
     <script src="./js/app.js" defer> </script>
     <script src="./js/cartService.js" defer> </script>
-  <!--  <script src="./js/LEANDRO1.js" defer> </script> -->
     <title></title>
 </head>
 <body>
   
     <header>
-        <nav>
-           <a href="index.html"><img src="./img/logo1.jpg" class="header-img"alt="logo"></a> 
-            <div>
-                <a href="#">BTM</a>
-                <a href="#">Ruta</a>
-                <a href="cart.html"><img src="./img/shoppping cart.jpg" alt="carrito de compras"><span id="cuenta-carrito">0</span></i>
+        <div class="contenedor-logo">
+           <a href="index.html"><img src="./img/logo1.jpg" class="logo"alt="logo"></a> 
+        </div>
+            <div class="contenedor-carrito">
+                <a href="cart.html"> <img src="./img/shoppping cart.jpg" class="carrito" alt="carrito de compras"><span id="cuenta-carrito">0</span></i>
                     </a>
             </div>
-        </nav>
+        
     </header>
-    <aside class="m-2">
+
+
+<div class="contenedor">
+
+    <aside>
         <H2>Categorias</H2>
     <ul>
         <li>
@@ -58,9 +60,11 @@
     <h2>Filtrar por</h2>
     <h3>Precio</h3>
     <div class="contenedor-filtro-precio">
-        <input class="contenedor-precio" id="precio-minimo" type="text"> -
+        <input class="contenedor-precio" id="precio-minimo" type="text">
+        <span class="guion">-</span>
         <input class="contenedor-precio" id="precio-maximo" type="text">
-        <button class="" id="buscar-rango">BUSCAR</button>
+        <button id="buscar-rango" type="submit">BUSCAR</button>
+    </div>
         <div class="contenedor-rango"> 
             <div>
                 <p>MIN</p>
@@ -69,20 +73,22 @@
                 <p>MAX</p>
             </div>
         </div>
-    </div>
-    
-
     </aside>
 <main>
 
-<section class="container">
- <h1 id="titulo-principal">titulo</h1>
+<section class="contenedor-main">
+ <h1 id="titulo-principal">Todos los productos</h1>
     <div id="shopContent" class="shop-content row">
 </section>
 
-
 </div>
 </main>
+
+
+</div>
+
+    
+    
 
 <footer>
 <p> Desarrollado por Leandro Calcabrini</p>

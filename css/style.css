@@ -1,99 +1,57 @@
-/* h2{
-    text-align: center;
-    font-size: 17px;
+
+:root{
+    --clr-main:#56070C;;
+    --clr-white:#ececec;
+    --clr-gray: #e2e2e2;
 }
-
-p{
-    margin: 0;
-}
-
-
-.contenedor{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-
-aside{
-    width: 150px;
-    height: 600px;
-    background-color: white;
-    position: absolute;
-
-}
-
-
-.banner{
-    height: 200px;
-    background-color :rgb(105, 54, 105);
-    padding-top: 75px;
-}
-
-h1{
-    color: white;
-} */
-
-
-
 
 *{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 15px;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
+ul{
+    text-decoration: none;
+}
 
 a{
     text-decoration: none;
-    color: black;
-}
-
-a:hover{
-    color: rgb(255, 0, 0);
+    color:black
 }
 
 
+
+
+/* header */  
 
 header{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.418);
-    padding: 10px 0;
-}
-
-
-header nav{
+    padding: 30px;
     display: flex;
     justify-content: space-between;
-    margin: 0 60px;
-}
-
-header nav div{
-    display: flex;
     align-items: center;
-    gap: 20px;
-    position: relative;
+    height: 100px;
 }
 
-img{
-  width: 150px;
-  height: 450px;
+.carrito{
+  width: 40px;
+  height: 40px;
 }
 
-.header-img{
+.logo{
     width: 100px;
     height: 100px;
 }
 
 
-
 #cuenta-carrito{
     background-color: red;
     border-radius: 100%;
-    display: inline-block;
     width: 20px;
     line-height: 20px;
-    aspect-ratio: 1;
     text-align: center;
     position: absolute;
     color: white;
@@ -101,10 +59,43 @@ img{
 
 
 
+/* ASIDE  */
+aside{
+    padding-left: 10px;
+    border-right: solid 1px rgba(0, 0, 0, 0.295);
+    background-color: #80808021;
+    width: 20%;
 
-header nav img{
+}
+
+h2{
+    padding-top: 10px;
+    padding-left: 10px;
+    text-decoration: underline #56070C;
+}
+
+
+aside button{
+ /*    width: 150px; */
+    margin-right: 40px;
+    margin-top: 5px;
+    border: none;
+    text-align: start;
+}
+
+aside button:hover{
+background-color: #56070C;
+color: white;
+}
+
+#buscar-rango{
+    color: white;
+    background-color: #56070C;
+    text-align: center;
+    width: 100px;
     height: 30px;
-    width: 30px;
+    margin-left: 10px;
+
 }
 
 
@@ -112,51 +103,89 @@ header nav img{
 
 
 
+/* MAIN */
 
+main{
+    width: 79%;
+}
 
+h1{
+    padding: 15px 30px;
+    text-decoration: underline #56070C;
+}
 
+.contenedor{
+    display: flex;
+    margin:0;
+    padding: 0;
+   
+}
 
-
-
-
-
-
-
+.contenedor-main{
+    display: grid;
+    
+}
 
 
 .shop-content{
 display: flex;
-justify-content: space-around;
+gap: 15px;
 flex-wrap: wrap;
-margin-top: 30px;
-margin-left: 80px;
-margin-right: 80px;
+margin-top: 20px;
+margin-left: 2px;
 }
 
 .articulo{
-    max-width: 300px;
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30%;
+    margin: 20px 11px;
     text-align: center;
     background-color: white;
 }
 
+.articulo img{
+    width: 120px;
+    height: 350px;
+}
 
 
 h3{
     font-size: 17px;
 }
+
 .precio{
     font-size: 20px;
 }
 
 
-
-
 button{
     border-radius: 5px;
     font-size: 15px;
+    padding: 5px;
 }
 
+
+.contenedor-precio{
+    width: 65px;
+    height: 30px;
+    margin: 5px;
+}
+
+.contenedor-rango{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.guion{
+    position: relative;
+    top: 7px;
+}
+.contenedor-filtro-precio{
+    display: flex;
+}
 
 
 
@@ -175,22 +204,4 @@ footer p{
 
 
 
-.contenedor-precio{
-    width: 90px;
-}
 
-.contenedor-rango{
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
-}
-
-/* .sublista{
-    display: none;
-} */
-
-aside{
-    width: 280px;
-    border-right: solid 1px rgba(0, 0, 0, 0.295);
-
-}
