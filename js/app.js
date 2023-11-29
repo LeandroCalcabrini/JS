@@ -71,7 +71,6 @@ if(carritoLS){
 
 
 
-
 function filtrar(){
 
         botonVarietal.forEach(boton => {

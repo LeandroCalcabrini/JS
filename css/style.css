@@ -253,9 +253,17 @@ footer p{
 
 .carrito-producto-cantidad{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    width: 100px;
+}
+
+.carrito-producto-cantidad button{
+    border: none;
+}
+
+.carrito-producto-cantidad p{
+    margin-top: 10px;
 }
 
 .carrito-producto-precio{
@@ -289,10 +297,17 @@ footer p{
     margin: 10px 40px;
 }
 
+.carrito-accion-volver{
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    color: #56070C;
+}
+
 .carrito-accion-vaciar{
     border: none;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     color: #56070C;
 }
 

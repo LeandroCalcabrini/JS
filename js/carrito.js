@@ -6,6 +6,7 @@ const contenedorCarritoAcciones = document.querySelector("#carrito-acciones");
 const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 const botonVaciar = document.querySelector(".carrito-accion-vaciar");
 const precioTotal = document.querySelector("#carrito-total");
+const botonComprar = document.querySelector("#carrito-accion-comprar");
 
 
 
@@ -31,11 +32,13 @@ function cargarProductosEnCarrito (){
                         </div>
                         <div class="carrito-producto-cantidad">
                             <small>Cantidad</small>
-                            <p>${producto.cantidad}</p>
+                            <button><i id="${producto.id}"class="restar bi bi-file-minus"></i></button>
+                            <p id="${producto.id}">${producto.cantidad}</p>
+                            <button> <i id="${producto.id}" class="sumar bi bi-file-plus"></i></button>
                         </div>
                         <div class="carrito-producto-precio">
                             <small>Precio</small>
-                            <p>$${producto.precio}</p>
+                            <p id="${producto.id}">$${producto.precio}</p>
                         </div>
                         <div class="carrito-producto-subtotal">
                             <small>Subtotal</small>
@@ -55,6 +58,8 @@ function cargarProductosEnCarrito (){
     }
 
     actualizarBotonesEliminar()
+    sumarCantidad()
+    restarCantidad()
     sumarTotal()
 }
 
@@ -91,9 +96,65 @@ vaciarCarrito()
 
 
 
-
-
 function sumarTotal(){
     precioTotal.innerText = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
 }
+
+
+function comprar(){
+    botonComprar.addEventListener("click",()=>{
+        productosEnCarrito.length = 0;
+
+        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+        cargarProductosEnCarrito()
+        contenedorCarritoVacio.classList.add("disabled");
+        contenedorCarritoComprado.classList.remove("disabled");
+    })
+
+}
+
+comprar()
+
+
+
+
+function sumarCantidad(){
+    const sumarCantidad = document.querySelectorAll(".sumar")
+    sumarCantidad.forEach(boton =>{
+        boton.addEventListener("click",(e)=>{
+
+            const idBotonSumar = e.currentTarget.id;
+
+            const index = productosEnCarrito.findIndex(producto => producto.id === idBotonSumar);
+            productosEnCarrito[index].cantidad++
+
+            localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))
+
+            cargarProductosEnCarrito()
+        })
+    })
+
+}
+
+function restarCantidad(){
+    const restarCantidad = document.querySelectorAll(".restar")
+    restarCantidad.forEach(boton=>{
+        boton.addEventListener("click", (e)=>{
+            const idBotonRestar = e.currentTarget.id;
+
+            const indexX = productosEnCarrito.findIndex(producto => producto.id === idBotonRestar);
+            if(productosEnCarrito[indexX].cantidad > 0){
+                productosEnCarrito[indexX].cantidad--
+
+            }
+
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+            cargarProductosEnCarrito()
+        })
+    })
+}
+   
+
+
 
