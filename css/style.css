@@ -70,7 +70,7 @@ aside{
 
 h2{
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 3px;
     text-decoration: underline #56070C;
 }
 
@@ -105,7 +105,7 @@ color: white;
 
 /* MAIN */
 
-main{
+.menu{
     width: 79%;
 }
 
@@ -152,7 +152,9 @@ margin-left: 2px;
 
 
 h3{
-    font-size: 17px;
+    font-size: 18px;
+    margin-left: 5px;
+    color:#56070C;
 }
 
 .precio{
@@ -175,7 +177,7 @@ button{
 
 .contenedor-rango{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 150px;
 }
 
@@ -187,6 +189,13 @@ button{
     display: flex;
 }
 
+
+
+
+#mensaje-no-producto{
+    text-align: center;
+    padding-top: 250px;
+}
 
 
 
@@ -205,3 +214,130 @@ footer p{
 
 
 
+/* CARRITO */
+
+.carrito-vacio{
+    text-align: center;
+}
+
+
+.carrito-productos{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #c9c9c954;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+
+.carrito-producto-img{
+    width: 4rem;
+    height: 9rem;
+    border-radius: 1rem
+}
+
+.carrito-producto-titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.carrito-producto-cantidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-producto-precio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-producto-subtotal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.carrito-producto-eliminar{
+    height: 2rem;
+    border: none;
+    background-color: #c9c9c900;
+    padding-top: 60px;
+    color: rgb(239 0 0);
+}
+
+
+.carrito-acciones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 40px;
+}
+
+.carrito-accion-vaciar{
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    color: #56070C;
+}
+
+
+
+.carrito-acciones-derecha{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.carrito-acciones-total{
+    display: flex;
+    background-color: #c9c9c954;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 15px;
+    gap: 5px;
+    color: #56070C;
+}
+
+.carrito-acciones-total p{
+    margin: 0
+}
+
+
+.carrito-accion-comprar{
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding:15px;
+    background-color: #56070C;
+    color: white;
+}
+
+
+.carrito-comprado{
+    text-align: center;
+}
+
+
+
+
+.disabled{
+    display: none;
+}

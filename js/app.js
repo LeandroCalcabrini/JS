@@ -1,4 +1,4 @@
-const carrito = [];
+
 const shopContent = document.getElementById("shopContent");
 
 const botonTodos = document.getElementById("todos")
@@ -33,6 +33,7 @@ function cargarProductos(productosElegidos){
     })
 
 
+
     let botonAgregarCarrito = document.querySelectorAll(".boton-agregar");
     botonAgregarCarrito.forEach(boton =>{
         boton.addEventListener("click",(e) => {
@@ -48,8 +49,6 @@ function cargarProductos(productosElegidos){
             }
 
          actualizarNumerito()
-         console.log(carrito)
-
          localStorage.setItem("productos-en-carrito", JSON.stringify(carrito))
                 
         })
@@ -58,6 +57,18 @@ function cargarProductos(productosElegidos){
 }
 
 cargarProductos(productos);
+
+
+let carrito
+const carritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+if(carritoLS){
+    carrito = carritoLS
+    actualizarNumerito()
+}else{
+    carrito = []
+}
+
+
 
 
 
@@ -97,10 +108,17 @@ function filtrar(){
         botonRangoPrecio.addEventListener("click",()=>{
             let rangoPrecio = productos.filter(producto => producto.precio >= minimo.value && producto.precio <= maximo.value)
             cargarProductos(rangoPrecio)
-        })
-          
+           
+            let consulta = rangoPrecio.length
+            if (consulta === 0){
+                titulo.innerHTML = "";
+                shopContent.innerHTML =` 
+                <p id="mensaje-no-producto">Lo siento, no hay ningun producto con esas caracteristicas <i class="bi bi-emoji-frown"></i></p>
+                `
+            }
+
+        }) 
 }
-    
 filtrar()
 
 
@@ -110,5 +128,4 @@ let Nuevonumerito = carrito.reduce((acc, producto) => acc + producto.cantidad,0)
 
 numerito.innerText = Nuevonumerito
 }
-
 
