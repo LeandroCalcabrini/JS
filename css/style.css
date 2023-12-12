@@ -68,12 +68,13 @@ aside{
 
 }
 
-h2{
+aside h2{
     padding-top: 10px;
     padding-left: 3px;
     text-decoration: underline #56070C;
 }
 
+  
 
 aside button{
  /*    width: 150px; */
@@ -97,8 +98,6 @@ color: white;
     margin-left: 10px;
 
 }
-
-
 
 
 

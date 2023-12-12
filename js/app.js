@@ -50,6 +50,21 @@ function cargarProductos(productosElegidos){
 
          actualizarNumerito()
          localStorage.setItem("productos-en-carrito", JSON.stringify(carrito))
+
+
+         Toastify({
+            text: "Nuevo producto agregado",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(to right, #56070C, #5F0F40)",
+            },
+
+          }).showToast();
                 
         })
     })

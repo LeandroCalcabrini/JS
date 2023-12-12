@@ -32,7 +32,7 @@ function cargarProductosEnCarrito (){
                         </div>
                         <div class="carrito-producto-cantidad">
                             <small>Cantidad</small>
-                            <button><i id="${producto.id}"class="restar bi bi-file-minus"></i></button>
+                            <button id="${producto.id}" class="resstar"><i id="${producto.id}"class="restar bi bi-file-minus"></i></button>
                             <p id="${producto.id}">${producto.cantidad}</p>
                             <button> <i id="${producto.id}" class="sumar bi bi-file-plus"></i></button>
                         </div>
@@ -73,22 +73,82 @@ function actualizarBotonesEliminar(){
         boton.addEventListener("click", (e)=>{
             const idBoton = e.currentTarget.id;
             const index = productosEnCarrito.findIndex(producto => producto.id === idBoton)
-            productosEnCarrito.splice(index, 1);
+            Swal.fire({
+                title: "Quiere eliminar este producto?",
+                text: "Va a eliminar este producto! Esta seguro/a?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si!",
+                cancelButtonText:"No, no quiero eliminarlo!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: "Eliminado!",
+                    text: "El producto ha sido eliminado",
+                    icon: "success"
+                  });
+                  productosEnCarrito.splice(index, 1);
 
-            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
-            cargarProductosEnCarrito()
+                  localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+                  cargarProductosEnCarrito()
+                }
+              });
+
+           
         })
     })
 }
 
 
-function vaciarCarrito (){   
-        botonVaciar.addEventListener("click",()=>{
-             productosEnCarrito.length = 0;
+function BorrarProducto(indexX){
 
-             localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))
-        
-            cargarProductosEnCarrito();
+    productosEnCarrito.splice(indexX, 1);
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+    cargarProductosEnCarrito()
+}
+
+
+
+function vaciarCarrito (){   
+        botonVaciar.addEventListener("click",()=>{const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: "btn btn-success",
+              cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+          });
+          swalWithBootstrapButtons.fire({
+            title: "Realmente desea cancelar su compra?",
+            text: "Se eliminarán todos los productos!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Si",
+            cancelButtonText: "No",
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                productosEnCarrito.length = 0;
+                localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))   
+               cargarProductosEnCarrito();
+              swalWithBootstrapButtons.fire({
+                title: "Eliminados!",
+                text: "Los productos fueron eliminados!",
+                icon: "success"
+              });
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "Los productos no fueron eliminados!",
+                icon: "error"
+              });
+            }
+          });   
         })
  }
 
@@ -104,11 +164,18 @@ function sumarTotal(){
 function comprar(){
     botonComprar.addEventListener("click",()=>{
         productosEnCarrito.length = 0;
-
         localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
         cargarProductosEnCarrito()
         contenedorCarritoVacio.classList.add("disabled");
         contenedorCarritoComprado.classList.remove("disabled");
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Su compra fue realizada con éxito. Muchas gracias!",
+            showConfirmButton: false,
+            timer: 2500
+          });
+        
     })
 
 }
@@ -143,18 +210,40 @@ function restarCantidad(){
             const idBotonRestar = e.currentTarget.id;
 
             const indexX = productosEnCarrito.findIndex(producto => producto.id === idBotonRestar);
-            if(productosEnCarrito[indexX].cantidad > 0){
+            if(productosEnCarrito[indexX].cantidad > 1){
                 productosEnCarrito[indexX].cantidad--
+                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+                cargarProductosEnCarrito()
+            } else{
+                Swal.fire({
+                    title: "Quiere eliminar este producto?",
+                    text: "El producto se elimina de su lista de compras",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si, quiero eliminarlo!",
+                    cancelButtonText: "No, no quiero eliminarlo"
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        BorrarProducto(indexX) 
+                      Swal.fire({
+                        title: "Eliminado",
+                        text: "El producto fue eliminado de la lista",
+                        icon: "success"
+                      }); 
+                                   
+                    }
+                  });
+              
 
             }
-
-            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
-            cargarProductosEnCarrito()
+            
+            
         })
     })
 }
-   
+
 
 
 
