@@ -13,6 +13,8 @@ const minimo = document.querySelector("#precio-minimo");
 const maximo = document.querySelector("#precio-maximo");
 const aside = document.getElementById("aside");
 
+let carrito
+
 
 function cargarProductos(productosElegidos){
     shopContent.innerHTML = "";
@@ -26,14 +28,11 @@ function cargarProductos(productosElegidos){
         <p id="${producto.id}" class="pesos-precio">$ ${producto.precio} </p>
         <strong id="${producto.id}"class="precio-dolar"></strong>
         </div>
-       
         <button class="boton-agregar" id="${producto.id}">Agregar al Carrito</button>
         `;
         shopContent.append(contenido);
     })
 
-
-    
 
     let botonAgregarCarrito = document.querySelectorAll(".boton-agregar");
     botonAgregarCarrito.forEach(boton =>{
@@ -41,7 +40,7 @@ function cargarProductos(productosElegidos){
             const idBotonAgregar = e.currentTarget.id;
             const productoAgregado = productos.find(producto => producto.id === idBotonAgregar);  
             if (carrito.some(producto => producto.id === idBotonAgregar)){
-                const index = carrito.findIndex(producto =>producto.id === idBotonAgregar)
+                const index = carrito.findIndex(producto =>producto.id === idBotonAgregar);
                 carrito[index].cantidad++;
             }else{
                 productoAgregado.cantidad = 1;
@@ -68,20 +67,6 @@ function cargarProductos(productosElegidos){
                 
         })
     })
-
-}
-
-
-cargarProductos(productos);
-
-
-let carrito
-const carritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
-if(carritoLS){
-    carrito = carritoLS
-    actualizarNumerito()
-}else{
-    carrito = []
 }
 
 
@@ -132,22 +117,38 @@ function filtrar(){
         }) 
 }
 
-filtrar()
-
 
 
 function actualizarNumerito(){
-let Nuevonumerito = carrito.reduce((acc, producto) => acc + producto.cantidad,0)
+let Nuevonumerito = carrito.reduce((acc, producto) => acc + producto.cantidad,0);
 
-numerito.innerText = Nuevonumerito
+numerito.innerText = Nuevonumerito;
 }
 
 
-
-
-
-const burgerMenu = document.getElementById("burger-menu");
+function botonBurgerMenu (){
+    const burgerMenu = document.getElementById("burger-menu");
 burgerMenu.addEventListener("click",()=>{
-   
     aside.classList.toggle("active");
 })
+}
+
+
+function carritoEnLocalStorage(){
+const carritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+if(carritoLS){
+    carrito = carritoLS
+    actualizarNumerito()
+}else{
+    carrito = []
+}
+}
+
+
+cargarProductos(productos);
+
+carritoEnLocalStorage();
+
+filtrar();
+
+botonBurgerMenu();

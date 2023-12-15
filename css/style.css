@@ -86,9 +86,12 @@ aside h2{
     align-items: center;
 }
 
+
+
 aside button{
  /*    width: 150px; */
     margin-right: 40px;
+    margin: 0px;
     margin-top: 5px;
     border: none;
     text-align: start;
@@ -105,8 +108,7 @@ color: white;
     text-align: center;
     height: 30px;
     margin: 0;
-    margin-top: 5px;
-    margin-left: 10px;
+    margin: 5px 10px
 
 }
 .contenedor-precio{
@@ -128,6 +130,7 @@ color: white;
 .contenedor-filtro-precio{
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 15px;
 }
 
 
@@ -398,9 +401,6 @@ footer p{
         display: none;
  
     }
-
-    
-    
     .active{
         display: unset;
     }
@@ -436,21 +436,26 @@ footer p{
 
 
 
-
 @media(max-width:1220px){
 
     aside{
         display: none;
-        width: 45%;
+    }
+
+    .active{
+        display: unset;
     }
 
     aside h2{
         padding-top: 50px;
     }
 
-    aside button{
-        margin: 0px;
+    #buscar-rango{
+        margin: 10px 35px
     }
+
+
+  
     #burger-menu{
         display: unset;
         font-size: 35px;
@@ -473,15 +478,7 @@ footer p{
 
     }
 
-    .carrito-acciones{
-        margin: 0;
-        flex-direction: column-reverse;
-        gap: 15px;
-        padding-top: 15px;
-        
-        
-
-    }
+  
 
 }
 

@@ -52,7 +52,7 @@ const productos =[
         variedad: 'Tinto',
         varietal: 'Malbec', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 7000,
         imagen:"./img/MALBEC/SALENTEIN Reserva_Malbec.png",
     },
     {
@@ -94,7 +94,7 @@ const productos =[
         imagen:"./img/CABERNET/benjamin cs.png",
     },
     {
-        id: 13,
+        id: "13",
         nombre: 'Don Nicanor',
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
@@ -108,7 +108,7 @@ const productos =[
         variedad: 'Tinto',
         varietal: 'Cabernet Sauvignon', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 7000,
         imagen:"./img/CABERNET/salentein reservs cs.png",
     },
     {
@@ -128,7 +128,7 @@ const productos =[
         variedad: 'Tinto',
         varietal: 'Merlot', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 7000,
         imagen:"./img/MERLOT/salenteint merlot.png",
     },
     {
@@ -168,7 +168,7 @@ const productos =[
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
         bodega: 'Nieto Senetiner',
-        precio: 5540,
+        precio: 7540,
         imagen:"./img/CHARDONNAY/don nicanor chardonnay.png",
     },
     {
@@ -177,7 +177,7 @@ const productos =[
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 4000,
         imagen:"./img/CHARDONNAY/emilia chardonnay.png",
     },
     {
@@ -186,7 +186,7 @@ const productos =[
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
         bodega: 'Nieto Senetiner',
-        precio: 5000,
+        precio: 3000,
         imagen:"./img/CHARDONNAY/fran chardonnay.png",
     },
     {
@@ -213,7 +213,7 @@ const productos =[
         variedad: 'Blanco',
         varietal: 'Chardonnay', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 7000,
         imagen:"./img/CHARDONNAY/salentein chardonnay.png",
     },
 
@@ -260,7 +260,7 @@ const productos =[
         variedad: 'Blanco',
         varietal: 'Sauvignon Blanc', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 7000,
         imagen:"./img/SAUVIGNON BLANC/salentein sb.png",
     },
 
@@ -298,7 +298,7 @@ const productos =[
         variedad: 'Rosado',
         varietal: 'Rosé de Malbec', 
         bodega: 'Salentein Wines',
-        precio: 5000,
+        precio: 7000,
         imagen:"./img/ROSE/SALENTEIN RESERVA ROSE.png",
     },
 ]

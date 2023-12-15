@@ -67,114 +67,168 @@ function cargarProductosEnCarrito (){
     sumarTotal()
 }
 
-cargarProductosEnCarrito();
 
 
 function actualizarBotonesEliminar(){
-    botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
-    
-    botonesEliminar.forEach(boton=>{
-        boton.addEventListener("click", (e)=>{
-            const idBoton = e.currentTarget.id;
-            const index = productosEnCarrito.findIndex(producto => producto.id === idBoton)
-            Swal.fire({
-                title: "Quiere eliminar este producto?",
-                text: "Va a eliminar este producto! Esta seguro/a?",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Si!",
-                cancelButtonText:"No, no quiero eliminarlo!"
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  Swal.fire({
-                    title: "Eliminado!",
-                    text: "El producto ha sido eliminado",
-                    icon: "success"
-                  });
-                  productosEnCarrito.splice(index, 1);
+  botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
+  
+  botonesEliminar.forEach(boton=>{
+      boton.addEventListener("click", (e)=>{
+          const idBoton = e.currentTarget.id;
+          const index = productosEnCarrito.findIndex(producto => producto.id === idBoton)
+          Swal.fire({
+              title: "Quiere eliminar este producto?",
+              text: "Va a eliminar este producto! Esta seguro/a?",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Si!",
+              cancelButtonText:"No, no quiero eliminarlo!"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire({
+                  title: "Eliminado!",
+                  text: "El producto ha sido eliminado",
+                  icon: "success"
+                });
+                productosEnCarrito.splice(index, 1);
 
-                  localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
-                  cargarProductosEnCarrito()
-                }
-              });
+                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+                cargarProductosEnCarrito()
+              }
+            });
 
-           
-        })
-    })
+         
+      })
+  })
+}
+
+
+function sumarCantidad(){
+  const sumarCantidad = document.querySelectorAll(".sumar")
+  sumarCantidad.forEach(boton =>{
+      boton.addEventListener("click",(e)=>{
+
+          const idBotonSumar = e.currentTarget.id;
+
+          const index = productosEnCarrito.findIndex(producto => producto.id === idBotonSumar);
+          productosEnCarrito[index].cantidad++
+
+          localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))
+
+          cargarProductosEnCarrito()
+      })
+  })
+
+}
+
+
+function restarCantidad(){
+  const restarCantidad = document.querySelectorAll(".restar")
+  restarCantidad.forEach(boton=>{
+      boton.addEventListener("click", (e)=>{
+          const idBotonRestar = e.currentTarget.id;
+
+          const indexX = productosEnCarrito.findIndex(producto => producto.id === idBotonRestar);
+          if(productosEnCarrito[indexX].cantidad > 1){
+              productosEnCarrito[indexX].cantidad--
+              localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+              cargarProductosEnCarrito()
+          } else{
+              Swal.fire({
+                  title: "Quiere eliminar este producto?",
+                  text: "El producto se elimina de su lista de compras",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Si, quiero eliminarlo!",
+                  cancelButtonText: "No, no quiero eliminarlo"
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                      BorrarProducto(indexX) 
+                    Swal.fire({
+                      title: "Eliminado",
+                      text: "El producto fue eliminado de la lista",
+                      icon: "success"
+                    }); 
+                                 
+                  }
+                });
+            
+
+          }
+          
+          
+      })
+  })
 }
 
 
 function BorrarProducto(indexX){
 
-    productosEnCarrito.splice(indexX, 1);
-
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
-    cargarProductosEnCarrito()
+  productosEnCarrito.splice(indexX, 1);
+  localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+  cargarProductosEnCarrito()
 }
 
 
-
 function vaciarCarrito (){   
-        botonVaciar.addEventListener("click",()=>{const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-              confirmButton: "btn btn-success",
-              cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: false
-          });
-          swalWithBootstrapButtons.fire({
-            title: "Realmente desea cancelar su compra?",
-            text: "Se eliminarán todos los productos!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Si",
-            cancelButtonText: "No",
-            reverseButtons: true
-          }).then((result) => {
-            if (result.isConfirmed) {
-                productosEnCarrito.length = 0;
-                localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))   
-               cargarProductosEnCarrito();
-              swalWithBootstrapButtons.fire({
-                title: "Eliminados!",
-                text: "Los productos fueron eliminados!",
-                icon: "success"
-              });
-            } else if (
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire({
-                title: "Cancelado",
-                text: "Los productos no fueron eliminados!",
-                icon: "error"
-              });
-            }
-          });   
-        })
- }
-
-vaciarCarrito()
-
+  botonVaciar.addEventListener("click",()=>{const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+      title: "Realmente desea cancelar su compra?",
+      text: "Se eliminarán todos los productos!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si",
+      cancelButtonText: "No",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+          productosEnCarrito.length = 0;
+          localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))   
+         cargarProductosEnCarrito();
+        swalWithBootstrapButtons.fire({
+          title: "Eliminados!",
+          text: "Los productos fueron eliminados!",
+          icon: "success"
+        });
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire({
+          title: "Cancelado",
+          text: "Los productos no fueron eliminados!",
+          icon: "error"
+        });
+      }
+    });   
+  })
+}
 
 
 function sumarTotal(){
-let prueba =  productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    precioTotal.innerText = prueba
-
-let dolar 
-precioDolar = fetch("https://dolarapi.com/v1/dolares/oficial")
-.then(response => response.json())
-.then(data =>{
-     dolar = data.compra;
-const conversionDolar = prueba / dolar
-const totalUsd = conversionDolar.toFixed(2)
-
-precioUsd.innerHTML = `US$ ${totalUsd}
-     `    
-})
+  let prueba =  productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+      precioTotal.innerText = prueba
+  
+  let dolar 
+  precioDolar = fetch("https://dolarapi.com/v1/dolares/oficial")
+  .then(response => response.json())
+  .then(data =>{
+       dolar = data.compra;
+  const conversionDolar = prueba / dolar
+  const totalUsd = conversionDolar.toFixed(2)
+  
+  precioUsd.innerHTML = `US$ ${totalUsd}
+       `    
+  })
 }
 
 
@@ -197,67 +251,11 @@ function comprar(){
 
 }
 
+
+
+
+cargarProductosEnCarrito();
+vaciarCarrito()
 comprar()
 
-
-
-
-function sumarCantidad(){
-    const sumarCantidad = document.querySelectorAll(".sumar")
-    sumarCantidad.forEach(boton =>{
-        boton.addEventListener("click",(e)=>{
-
-            const idBotonSumar = e.currentTarget.id;
-
-            const index = productosEnCarrito.findIndex(producto => producto.id === idBotonSumar);
-            productosEnCarrito[index].cantidad++
-
-            localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito))
-
-            cargarProductosEnCarrito()
-        })
-    })
-
-}
-
-function restarCantidad(){
-    const restarCantidad = document.querySelectorAll(".restar")
-    restarCantidad.forEach(boton=>{
-        boton.addEventListener("click", (e)=>{
-            const idBotonRestar = e.currentTarget.id;
-
-            const indexX = productosEnCarrito.findIndex(producto => producto.id === idBotonRestar);
-            if(productosEnCarrito[indexX].cantidad > 1){
-                productosEnCarrito[indexX].cantidad--
-                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-                cargarProductosEnCarrito()
-            } else{
-                Swal.fire({
-                    title: "Quiere eliminar este producto?",
-                    text: "El producto se elimina de su lista de compras",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Si, quiero eliminarlo!",
-                    cancelButtonText: "No, no quiero eliminarlo"
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        BorrarProducto(indexX) 
-                      Swal.fire({
-                        title: "Eliminado",
-                        text: "El producto fue eliminado de la lista",
-                        icon: "success"
-                      }); 
-                                   
-                    }
-                  });
-              
-
-            }
-            
-            
-        })
-    })
-}
 
