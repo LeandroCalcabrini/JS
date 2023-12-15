@@ -10,8 +10,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
     <script src="./js/data.js" defer> </script>
     <script src="./js/app.js" defer> </script>
+    
 
-    <title></title>
+    <title>Inicio - Tienda Virtual Vinos</title>
 </head>
 <body>
   
@@ -23,12 +24,11 @@
                 <a href="cart.html"> <img src="./img/shoppping cart.jpg" class="carrito" alt="carrito de compras"><span id="cuenta-carrito">0</span></i>
                     </a>
             </div>
-        
     </header>
 
 
 <div class="contenedor">
-    <aside>
+    <aside id="aside">
         <H2>Categorias</H2>
     <ul>
         <li>
@@ -62,23 +62,23 @@
     </ul>
     <h3>Precio:</h3>
     <div class="contenedor-filtro-precio">
-        <input class="contenedor-precio" id="precio-minimo" type="text">
-        <span class="guion">-</span>
-        <input class="contenedor-precio" id="precio-maximo" type="text">
-        <button id="buscar-rango" type="submit">BUSCAR</button>
-    </div>
-        <div class="contenedor-rango"> 
-            <div>
-                <p>MIN</p>
-            </div>
-            <div>
-                <p>MAX</p>
-            </div>
+        <div class="contenedor-minimo">
+            <input class="contenedor-precio" id="precio-minimo" type="text">
+            <string>Min</string>
         </div>
+        <span class="guion">-</span>
+        <div class="contenedor-maximo">
+            <input class="contenedor-precio" id="precio-maximo" type="text">
+            <string>Max</string>
+        </div>
+        <button id="buscar-rango" type="submit">BUSCAR</button> 
+    </div>
+        
     </aside>
 <main class="menu"> 
 
 <section class="contenedor-main">
+    <i id="burger-menu" class="bi bi-list"></i>
  <h1 id="titulo-principal">Todos los productos</h1>
     <div id="shopContent" class="shop-content row">
         <!-- ESTO SE VA A COMPLETAR CON EL JS -->

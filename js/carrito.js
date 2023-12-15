@@ -7,6 +7,7 @@ const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 const botonVaciar = document.querySelector(".carrito-accion-vaciar");
 const precioTotal = document.querySelector("#carrito-total");
 const botonComprar = document.querySelector("#carrito-accion-comprar");
+const precioUsd = document.querySelector("#carrito-total-usd")
 
 
 
@@ -32,9 +33,12 @@ function cargarProductosEnCarrito (){
                         </div>
                         <div class="carrito-producto-cantidad">
                             <small>Cantidad</small>
+                            <div class="contenedor-cantidad-carrito">
                             <button id="${producto.id}" class="resstar"><i id="${producto.id}"class="restar bi bi-file-minus"></i></button>
                             <p id="${producto.id}">${producto.cantidad}</p>
                             <button> <i id="${producto.id}" class="sumar bi bi-file-plus"></i></button>
+                            </div>
+                            
                         </div>
                         <div class="carrito-producto-precio">
                             <small>Precio</small>
@@ -157,7 +161,20 @@ vaciarCarrito()
 
 
 function sumarTotal(){
-    precioTotal.innerText = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+let prueba =  productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+    precioTotal.innerText = prueba
+
+let dolar 
+precioDolar = fetch("https://dolarapi.com/v1/dolares/oficial")
+.then(response => response.json())
+.then(data =>{
+     dolar = data.compra;
+const conversionDolar = prueba / dolar
+const totalUsd = conversionDolar.toFixed(2)
+
+precioUsd.innerHTML = `US$ ${totalUsd}
+     `    
+})
 }
 
 
@@ -243,7 +260,4 @@ function restarCantidad(){
         })
     })
 }
-
-
-
 

@@ -64,7 +64,7 @@ aside{
     padding-left: 10px;
     border-right: solid 1px rgba(0, 0, 0, 0.295);
     background-color: #80808021;
-    width: 20%;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.418);
 
 }
 
@@ -74,7 +74,17 @@ aside h2{
     text-decoration: underline #56070C;
 }
 
-  
+.contenedor-minimo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-maximo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 aside button{
  /*    width: 150px; */
@@ -93,17 +103,39 @@ color: white;
     color: white;
     background-color: #56070C;
     text-align: center;
-    width: 100px;
     height: 30px;
+    margin: 0;
+    margin-top: 5px;
     margin-left: 10px;
 
+}
+.contenedor-precio{
+    width: 55px;
+    height: 30px;
+    margin: 5px;
+}
+
+.contenedor-rango{
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+}
+
+.guion{
+    position: relative;
+    top: 7px;
+}
+.contenedor-filtro-precio{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
 
-
 /* MAIN */
-
+#burger-menu{
+    display: none;
+}
 .menu{
     width: 79%;
 }
@@ -128,10 +160,8 @@ h1{
 
 .shop-content{
 display: flex;
-gap: 15px;
-flex-wrap: wrap;
-margin-top: 20px;
-margin-left: 2px;
+align-items: center;
+justify-content: center;
 }
 
 .articulo{
@@ -139,7 +169,7 @@ margin-left: 2px;
     flex-direction: column;
     align-items: center;
     max-width: 30%;
-    margin: 20px 11px;
+    margin: 20px;
     text-align: center;
     background-color: white;
 }
@@ -156,6 +186,16 @@ h3{
     color:#56070C;
 }
 
+h4{
+    font-size: 1rem;
+}
+
+
+.pesos-precio{
+    font-size: 20px;
+}
+  
+
 .precio{
     font-size: 20px;
 }
@@ -168,25 +208,7 @@ button{
 }
 
 
-.contenedor-precio{
-    width: 65px;
-    height: 30px;
-    margin: 5px;
-}
 
-.contenedor-rango{
-    display: flex;
-    justify-content: space-around;
-    width: 150px;
-}
-
-.guion{
-    position: relative;
-    top: 7px;
-}
-.contenedor-filtro-precio{
-    display: flex;
-}
 
 
 
@@ -252,10 +274,16 @@ footer p{
 
 .carrito-producto-cantidad{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
     width: 100px;
 }
+.contenedor-cantidad-carrito{
+    display: flex;
+
+}
+
 
 .carrito-producto-cantidad button{
     border: none;
@@ -334,6 +362,12 @@ footer p{
     margin: 0
 }
 
+.carrito-total-usd{
+    border-left: solid 2px;
+    padding-left: 5px;
+    color: green
+}
+
 
 .carrito-accion-comprar{
     border: none;
@@ -355,3 +389,103 @@ footer p{
 .disabled{
     display: none;
 }
+
+
+
+
+@media(max-width:670px){
+    aside{
+        display: none;
+ 
+    }
+
+    
+    
+    .active{
+        display: unset;
+    }
+    #burger-menu{
+        display: unset;
+        font-size: 35px;
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .menu{
+        width: 100%;
+    }
+
+
+    #buscar-rango{
+        margin: 10px 35px
+    }
+
+    .shop-content{
+        flex-direction: column;
+        align-content: center;
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+@media(max-width:1220px){
+
+    aside{
+        display: none;
+        width: 45%;
+    }
+
+    aside h2{
+        padding-top: 50px;
+    }
+
+    aside button{
+        margin: 0px;
+    }
+    #burger-menu{
+        display: unset;
+        font-size: 35px;
+        position: absolute;
+        left: 5px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .menu{
+        width: 100%;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .carrito-producto{
+        margin:0;
+
+    }
+
+    .carrito-acciones{
+        margin: 0;
+        flex-direction: column-reverse;
+        gap: 15px;
+        padding-top: 15px;
+        
+        
+
+    }
+
+}
+
+
+
+
+
