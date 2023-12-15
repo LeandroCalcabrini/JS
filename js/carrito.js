@@ -219,7 +219,7 @@ function sumarTotal(){
       precioTotal.innerText = prueba
   
   let dolar 
-  precioDolar = fetch("https://dolarapi.com/v1/dolares/oficial")
+  precioDolar = fetch("https://dolarapi.com/v1/dolares/blue")
   .then(response => response.json())
   .then(data =>{
        dolar = data.compra;
