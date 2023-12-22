@@ -445,11 +445,12 @@ footer p{
 
     aside{
         display: none;
- 
     }
+
     .active{
         display: unset;
     }
+
     #burger-menu{
         display: unset;
         font-size: 35px;
@@ -471,23 +472,19 @@ footer p{
         margin: 10px 35px;
     }
 
-
-
-
     .shop-content{
         flex-direction: column;
         align-content: center;
         width: 100%;
     }
 
+    
     .carrito-acciones{
         margin:0;
         gap:15px;
         flex-wrap: wrap-reverse;
         justify-content: space-evenly;
         padding: 15px;
-
-
     }
 
 
